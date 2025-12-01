@@ -19,15 +19,19 @@ import {
   MapPin,
   Briefcase,
   Clock,
-  X, // Added X icon for closing modal
-  CheckCircle2, // Added for bullet points
+  X,
+  CheckCircle2,
+  Building2, // Icon for Office
+  Wifi,      // Icon for Remote
+  Laptop2,   // Icon for Hybrid
+  Code2,     // Added for generic dev icon
 } from "lucide-react";
 
 export default function Careers() {
   const router = useRouter();
   const [tab, setTab] = useState("jobs");
   
-  // State to handle the popup
+  // State for the modal
   const [selectedJob, setSelectedJob] = useState(null);
 
   const fadeUp = {
@@ -43,30 +47,92 @@ export default function Careers() {
     />
   );
 
-  // ===========================
-  //  UPDATED DATA WITH DETAILS
-  // ===========================
+  // ==========================================
+  //  UPDATED DATA (New Next.js Roles Added)
+  // ==========================================
   const jobs = [
-    {
+
+     {
       category: "Developer",
-      title: "App Developer",
+      title: "Mobile App Developer",
       description: "Develop mobile applications with modern frameworks.",
-      location: "Hybrid",
-      experience: "Fresher",
+      location: "Hyderabad, India",
+      experience: "0 Years",
       type: "Full-time",
-      workMode: "Work From Office",
+      workMode: "Hybrid",
       tags: ["Flutter", "React Native", "iOS", "Android"],
+      about: "We are seeking a talented App Developer to build sophisticated applications for iOS and Android. You will work closely with our product team to deliver seamless mobile experiences.",
       responsibilities: [
-        "Design and build sophisticated applications for the iOS and Android platforms.",
+        "Design and build advanced applications for the iOS and Android platforms.",
         "Collaborate with cross-functional teams to define, design, and ship new features.",
         "Work with outside data sources and APIs.",
         "Unit-test code for robustness, including edge cases, usability, and general reliability.",
-        "Continuously discover, evaluate, and implement new technologies to maximize development efficiency."
+        "Fix bugs and improve application performance."
+      ],
+      requirements: [
+        "B.Tech/B.E in Computer Science or relevant field.",
+        "Proven software development experience and Android/iOS skills development.",
+        "Experience with Flutter or React Native is a must.",
+        "Experience with third-party libraries and APIs.",
+        "Solid understanding of the full mobile development life cycle.",
+        "Strong problem-solving skills and ability to troubleshoot complex issues."
       ]
     },
+    {
+      category: "Developer",
+      title: "Next.js Developer",
+      description: "Build high-performance web applications using Next.js & React.",
+      location: "Hyderabad, India",
+      experience: "0 Years",
+      type: "Full-time",
+      workMode: "Work From Office",
+      tags: ["Next.js 14", "TypeScript", "Tailwind", "Redux"],
+      about: "We are looking for a skilled Next.js Developer to join our core engineering team. You will be responsible for architecting and building scalable web applications, ensuring high performance and SEO optimization using the latest Next.js features (App Router, Server Actions).",
+      responsibilities: [
+        "Develop and maintain scalable web applications using Next.js (App Router) and TypeScript.",
+        "Implement Server-Side Rendering (SSR) and Static Site Generation (SSG) for optimal performance.",
+        "Collaborate with UI/UX designers to translate Figma designs into pixel-perfect, responsive code.",
+        "Optimize applications for maximum speed, SEO, and scalability.",
+        "Integrate RESTful APIs and third-party services (e.g., Stripe, Firebase, AWS)."
+      ],
+      requirements: [
+        "Strong proficiency in JavaScript (ES6+), TypeScript, and React.js.",
+        "In-depth knowledge of Next.js features (Routing, Image Optimization, Middleware).",
+        "Experience with state management libraries (Redux Toolkit, Zustand, or Context API).",
+        "Proficiency in Tailwind CSS and modern styling frameworks.",
+        "Understanding of SEO principles and Core Web Vitals.",
+        "Experience with version control (Git) and CI/CD pipelines."
+      ]
+    },
+   
   ];
 
   const interns = [
+    {
+      category: "Internship",
+      title: "Next.js Developer Intern",
+      description: "Learn modern web development with Next.js.",
+      location: "Remote",
+      experience: "Fresher",
+      type: "Internship",
+      workMode: "Remote",
+      tags: ["Next.js", "React", "JavaScript", "CSS"],
+      about: "This internship is designed for aspiring web developers who want to master the Next.js ecosystem. You will work on real-world projects, learning how to build production-grade applications.",
+      responsibilities: [
+        "Assist senior developers in building UI components using React and Tailwind CSS.",
+        "Learn and implement Next.js concepts like Routing and Data Fetching.",
+        "Fix bugs and assist in code maintenance.",
+        "Participate in code reviews and team meetings.",
+        "Write clean, maintainable, and documented code."
+      ],
+      requirements: [
+        "Solid understanding of HTML5, CSS3, and JavaScript.",
+        "Basic knowledge of React.js (Components, Props, State).",
+        "Familiarity with Next.js structure is a plus.",
+        "Eagerness to learn new technologies and frameworks.",
+        "Good communication skills and ability to work in a remote team."
+      ]
+    },
     {
       category: "Internship",
       title: "Frontend Developer Intern",
@@ -76,43 +142,70 @@ export default function Careers() {
       type: "Internship",
       workMode: "Remote",
       tags: ["React", "Tailwind", "HTML", "CSS"],
+      about: "Kickstart your career with our Frontend Internship. You will work alongside senior developers to build responsive web interfaces using modern technologies like React.js and Tailwind CSS.",
       responsibilities: [
         "Assist in developing user-facing features using React.js.",
         "Build reusable components and front-end libraries for future use.",
         "Translate designs and wireframes into high-quality code.",
-        "Optimize components for maximum performance across a vast array of web-capable devices and browsers."
+        "Optimize components for maximum performance across various devices.",
+        "Ensure the technical feasibility of UI/UX designs."
+      ],
+      requirements: [
+        "Basic knowledge of HTML, CSS, and JavaScript.",
+        "Familiarity with React.js framework and hooks.",
+        "Understanding of responsive design principles (Mobile-First approach).",
+        "Familiarity with Git/GitHub is preferred.",
+        "Strong attention to detail."
       ]
     },
     {
       category: "Internship",
       title: "UI/UX Intern",
       description: "Assist product design team and learn design workflows.",
-      location: "Hybrid",
+      location: "Hyderabad, India",
       experience: "Fresher",
       type: "Internship",
       workMode: "Hybrid",
       tags: ["Figma", "Sketching", "Brand Design"],
+      about: "Join our creative team to design intuitive and beautiful user experiences. You will learn how to take a concept from a rough sketch to a polished, high-fidelity prototype.",
       responsibilities: [
-        "Collaborate with product management and engineering to define and implement innovative solutions.",
-        "Execute all visual design stages from concept to final hand-off to engineering.",
-        "Create wireframes, storyboards, user flows, process flows and site maps.",
-        "Establish and promote design guidelines, best practices and standards."
+        "Collaborate with product management to define innovative solutions.",
+        "Execute visual design stages from concept to final hand-off.",
+        "Create wireframes, storyboards, user flows, and site maps.",
+        "Conduct user research and evaluate user feedback.",
+        "Establish and promote design guidelines and standards."
+      ],
+      requirements: [
+        "Portfolio of design projects (academic or personal).",
+        "Proficiency in Figma, Adobe XD, or Sketch.",
+        "Strong eye for aesthetics, typography, and color theory.",
+        "Basic understanding of HTML/CSS is a plus (to understand dev constraints).",
+        "Good communication skills."
       ]
     },
     {
       category: "Internship",
       title: "App Developer Intern",
       description: "Build mobile applications with modern frameworks.",
-      location: "Hybrid",
+      location: "Hyderabad, India",
       experience: "Fresher",
       type: "Internship",
-      workMode: "Remote or WFO",
+      workMode: "Hybrid",
       tags: ["Flutter", "React Native", "iOS", "Android"],
+      about: "An excellent opportunity for budding mobile developers to gain hands-on experience in building apps for iOS and Android ecosystems.",
       responsibilities: [
-        "Support the entire application lifecycle (concept, design, test, release and support).",
+        "Support the entire application lifecycle (concept, design, test, release).",
         "Produce fully functional mobile applications writing clean code.",
         "Gather specific requirements and suggest solutions.",
-        "Write unit and UI tests to identify malfunctions."
+        "Write unit and UI tests to identify malfunctions.",
+        "Research and suggest new mobile products, applications and protocols."
+      ],
+      requirements: [
+        "Basic understanding of Flutter or React Native.",
+        "Knowledge of Dart or JavaScript/TypeScript.",
+        "Familiarity with REST APIs and JSON.",
+        "Problem-solving mindset and ability to learn quickly.",
+        "A personal project or app (even simple ones) is a big plus."
       ]
     },
   ];
@@ -136,6 +229,13 @@ export default function Careers() {
   const isJobsTab = tab === "jobs";
   const noJobs = jobs.length === 0;
   const noInterns = interns.length === 0;
+
+  // Helper to get Icon for Work Mode
+  const getWorkModeIcon = (mode) => {
+    if (mode.includes("Remote")) return <Wifi size={18} />;
+    if (mode.includes("Hybrid")) return <Laptop2 size={18} />;
+    return <Building2 size={18} />;
+  };
 
   return (
     <div className="relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-blue-50">
@@ -220,7 +320,7 @@ export default function Careers() {
 
       {/* JOB LIST SECTION */}
       <section className="pt-6 pb-24 md:pb-32 px-4 md:px-6 max-w-5xl mx-auto space-y-8 md:space-y-10">
-
+        
         {isJobsTab && noJobs && (
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} className="text-center py-20">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-700">No Job Openings Right Now</h3>
@@ -263,7 +363,6 @@ export default function Careers() {
                   <div className="flex flex-wrap gap-x-6 gap-y-3 text-gray-600 text-sm mt-5">
                     <span className="flex items-center gap-1"><MapPin size={16} /> {job.location}</span>
                     <span className="flex items-center gap-1"><Briefcase size={16} /> {job.experience}</span>
-                    <span className="flex items-center gap-1"><Clock size={16} /> {job.type}</span>
                   </div>
 
                   <div className="flex flex-wrap gap-2 mt-4">
@@ -275,7 +374,7 @@ export default function Careers() {
                   </div>
                 </div>
 
-                {/* Buttons: Stacked on mobile, row on desktop */}
+                {/* Buttons */}
                 <div className="flex flex-col w-full md:w-auto gap-3">
                   <button
                     onClick={() => router.push("https://vyomanexgen.com/contact")}
@@ -283,8 +382,6 @@ export default function Careers() {
                   >
                     Apply Now
                   </button>
-                  
-                  {/* NEW BUTTON: VIEW DETAILS */}
                   <button
                     onClick={() => setSelectedJob(job)}
                     className="w-full md:w-40 px-6 py-3 text-sm bg-white text-blue-600 border border-blue-200 hover:bg-blue-50 rounded-full font-semibold transition-transform active:scale-95"
@@ -292,7 +389,6 @@ export default function Careers() {
                     View Details
                   </button>
                 </div>
-
               </div>
             </motion.div>
           ))}
@@ -300,12 +396,13 @@ export default function Careers() {
 
       {/* FOOTER CTA */}
       <section className="text-center px-6 py-16 md:py-24 bg-gradient-to-r from-[#3b1566] via-[#6b1bb4] to-[#d11eac] text-white">
-        <h3 className="text-xl font-semibold tracking-wide">
+        <h3 className="text-lg md:text-xl font-semibold tracking-wide opacity-90">
           Don't See a Perfect Fit?
         </h3>
-        <p className="mt-4 max-w-2xl mx-auto text-2xl font-bold">
-         We're always looking for talented people.<br/> Send us your resume to our mail id "<span className="text-violet-500  px-2 py-1 rounded font-bold">vyomanexgenservices@gmail.com</span>". <br/>Let's talk
-          about how you can contribute to our team.
+        <p className="mt-4 max-w-2xl mx-auto text-xl md:text-2xl font-bold leading-relaxed">
+          We're always looking for talented people. <br className="hidden md:block"/>
+          Send your resume to <br className="md:hidden"/>
+          <span className="text-yellow-300 px-2 py-1 rounded inline-block mt-2 md:mt-0">vyomanexgenservices@gmail.com</span>
         </p>
         <button
           onClick={() => router.push("https://vyomanexgen.com/contact")}
@@ -315,76 +412,118 @@ export default function Careers() {
         </button>
       </section>
 
-     
+      {/* ================================== */}
+      {/* RESPONSIVE JOB DESCRIPTION MODAL  */}
+      {/* ================================== */}
       <AnimatePresence>
         {selectedJob && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
-            onClick={() => setSelectedJob(null)} // Close when clicking background
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+            onClick={() => setSelectedJob(null)}
           >
             {/* Modal Box */}
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()} // Prevent close on box click
-              className="bg-white rounded-2xl w-full max-w-lg max-h-[85vh] flex flex-col shadow-2xl overflow-hidden"
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden"
             >
               
               {/* Header */}
-              <div className="p-6 border-b border-gray-100 flex justify-between items-start bg-gray-50">
+              <div className="flex-shrink-0 p-5 md:p-6 border-b border-gray-100 bg-gray-50 flex justify-between items-start">
                 <div>
-                  <span className="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded-md uppercase tracking-wide">
-                    {selectedJob.category}
-                  </span>
-                  <h3 className="text-2xl font-bold text-gray-900 mt-2">{selectedJob.title}</h3>
-                  <p className="text-gray-500 text-sm">{selectedJob.location} • {selectedJob.type}</p>
+                   <div className="flex gap-2 mb-2">
+                     <span className="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded-md uppercase tracking-wide">
+                      {selectedJob.category}
+                     </span>
+                     {/* Work Mode Badge in Header */}
+                     <span className={`text-xs font-bold px-2 py-1 rounded-md uppercase tracking-wide flex items-center gap-1 ${
+                       selectedJob.workMode.includes("Remote") ? "text-green-600 bg-green-100" : "text-purple-600 bg-purple-100"
+                     }`}>
+                       {getWorkModeIcon(selectedJob.workMode)}
+                       {selectedJob.workMode}
+                     </span>
+                   </div>
+
+                  <h3 className="text-xl md:text-2xl font-extrabold text-gray-900 leading-tight">
+                    {selectedJob.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm mt-1 flex flex-wrap gap-2 items-center">
+                    <MapPin size={14}/> {selectedJob.location} 
+                    <span className="text-gray-300">|</span> 
+                    <Briefcase size={14}/> {selectedJob.type}
+                  </p>
                 </div>
                 <button 
                   onClick={() => setSelectedJob(null)}
-                  className="p-2 hover:bg-gray-200 rounded-full transition"
+                  className="p-2 -mr-2 text-gray-400 hover:text-gray-600 hover:bg-gray-200 rounded-full transition"
                 >
-                  <X size={24} className="text-gray-500" />
+                  <X size={24} />
                 </button>
               </div>
 
               {/* Scrollable Body */}
-              <div className="p-6 overflow-y-auto">
-                <h4 className="text-lg font-bold text-gray-800 mb-4">Role & Responsibilities</h4>
+              <div className="flex-1 p-5 md:p-8 overflow-y-auto space-y-6">
                 
-                {selectedJob.responsibilities ? (
+                {/* 1. About the Role */}
+                <div>
+                  <h4 className="text-base md:text-lg font-bold text-gray-900 mb-2">About the Role</h4>
+                  <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                    {selectedJob.about}
+                  </p>
+                </div>
+
+                {/* 2. Key Responsibilities */}
+                <div>
+                  <h4 className="text-base md:text-lg font-bold text-gray-900 mb-3">Key Responsibilities</h4>
                   <ul className="space-y-3">
-                    {selectedJob.responsibilities.map((item, index) => (
-                      <li key={index} className="flex gap-3 text-gray-600 leading-relaxed text-sm md:text-base">
-                        <CheckCircle2 size={20} className="text-green-500 shrink-0 mt-0.5" />
-                        {item}
+                    {selectedJob.responsibilities && selectedJob.responsibilities.map((item, index) => (
+                      <li key={index} className="flex gap-3 text-gray-600 text-sm md:text-base leading-relaxed">
+                        <CheckCircle2 size={18} className="text-blue-500 shrink-0 mt-1" />
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
-                ) : (
-                  <p className="text-gray-500 italic">No detailed description available for this role.</p>
-                )}
+                </div>
 
-                <div className="mt-8 pt-6 border-t border-gray-100">
+                 {/* 3. Requirements */}
+                 {selectedJob.requirements && (
+                  <div>
+                    <h4 className="text-base md:text-lg font-bold text-gray-900 mb-3">Requirements</h4>
+                    <ul className="space-y-3">
+                      {selectedJob.requirements.map((item, index) => (
+                        <li key={index} className="flex gap-3 text-gray-600 text-sm md:text-base leading-relaxed">
+                          <div className="h-1.5 w-1.5 rounded-full bg-gray-400 mt-2 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                 )}
+
+                {/* 4. Tech Stack */}
+                <div className="pt-4 border-t border-gray-100">
                   <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wide mb-3">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedJob.tags.map((tag, i) => (
-                       <span key={i} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full font-medium">
+                       <span key={i} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full font-medium border border-gray-200">
                          {tag}
                        </span>
                     ))}
                   </div>
                 </div>
+
               </div>
 
-              {/* Footer */}
-              <div className="p-4 border-t border-gray-100 bg-gray-50 flex gap-3">
+              {/* Footer Buttons */}
+              <div className="flex-shrink-0 p-4 border-t border-gray-100 bg-gray-50 flex gap-3">
                 <button
                   onClick={() => setSelectedJob(null)}
-                  className="flex-1 py-3 text-gray-600 font-semibold hover:text-gray-900 transition"
+                  className="flex-1 py-3 text-gray-600 font-semibold hover:bg-gray-200 rounded-xl transition"
                 >
                   Close
                 </button>
