@@ -52,58 +52,58 @@ export default function Careers() {
   // ==========================================
   const jobs = [
 
-     {
-      category: "Developer",
-      title: "Mobile App Developer",
-      description: "Develop mobile applications with modern frameworks.",
-      location: "Hyderabad, India",
-      experience: "0 Years",
-      type: "Full-time",
-      workMode: "Hybrid",
-      tags: ["Flutter", "React Native", "iOS", "Android"],
-      about: "We are seeking a talented App Developer to build sophisticated applications for iOS and Android. You will work closely with our product team to deliver seamless mobile experiences.",
-      responsibilities: [
-        "Design and build advanced applications for the iOS and Android platforms.",
-        "Collaborate with cross-functional teams to define, design, and ship new features.",
-        "Work with outside data sources and APIs.",
-        "Unit-test code for robustness, including edge cases, usability, and general reliability.",
-        "Fix bugs and improve application performance."
-      ],
-      requirements: [
-        "B.Tech/B.E in Computer Science or relevant field.",
-        "Proven software development experience and Android/iOS skills development.",
-        "Experience with Flutter or React Native is a must.",
-        "Experience with third-party libraries and APIs.",
-        "Solid understanding of the full mobile development life cycle.",
-        "Strong problem-solving skills and ability to troubleshoot complex issues."
-      ]
-    },
-    {
-      category: "Developer",
-      title: "Next.js Developer",
-      description: "Build high-performance web applications using Next.js & React.",
-      location: "Hyderabad, India",
-      experience: "0 Years",
-      type: "Full-time",
-      workMode: "Work From Office",
-      tags: ["Next.js 14", "TypeScript", "Tailwind", "Redux"],
-      about: "We are looking for a skilled Next.js Developer to join our core engineering team. You will be responsible for architecting and building scalable web applications, ensuring high performance and SEO optimization using the latest Next.js features (App Router, Server Actions).",
-      responsibilities: [
-        "Develop and maintain scalable web applications using Next.js (App Router) and TypeScript.",
-        "Implement Server-Side Rendering (SSR) and Static Site Generation (SSG) for optimal performance.",
-        "Collaborate with UI/UX designers to translate Figma designs into pixel-perfect, responsive code.",
-        "Optimize applications for maximum speed, SEO, and scalability.",
-        "Integrate RESTful APIs and third-party services (e.g., Stripe, Firebase, AWS)."
-      ],
-      requirements: [
-        "Strong proficiency in JavaScript (ES6+), TypeScript, and React.js.",
-        "In-depth knowledge of Next.js features (Routing, Image Optimization, Middleware).",
-        "Experience with state management libraries (Redux Toolkit, Zustand, or Context API).",
-        "Proficiency in Tailwind CSS and modern styling frameworks.",
-        "Understanding of SEO principles and Core Web Vitals.",
-        "Experience with version control (Git) and CI/CD pipelines."
-      ]
-    },
+    //  {
+    //   category: "Developer",
+    //   title: "Mobile App Developer",
+    //   description: "Develop mobile applications with modern frameworks.",
+    //   location: "Hyderabad, India",
+    //   experience: "0 Years",
+    //   type: "Full-time",
+    //   workMode: "Hybrid",
+    //   tags: ["Flutter", "React Native", "iOS", "Android"],
+    //   about: "We are seeking a talented App Developer to build sophisticated applications for iOS and Android. You will work closely with our product team to deliver seamless mobile experiences.",
+    //   responsibilities: [
+    //     "Design and build advanced applications for the iOS and Android platforms.",
+    //     "Collaborate with cross-functional teams to define, design, and ship new features.",
+    //     "Work with outside data sources and APIs.",
+    //     "Unit-test code for robustness, including edge cases, usability, and general reliability.",
+    //     "Fix bugs and improve application performance."
+    //   ],
+    //   requirements: [
+    //     "B.Tech/B.E in Computer Science or relevant field.",
+    //     "Proven software development experience and Android/iOS skills development.",
+    //     "Experience with Flutter or React Native is a must.",
+    //     "Experience with third-party libraries and APIs.",
+    //     "Solid understanding of the full mobile development life cycle.",
+    //     "Strong problem-solving skills and ability to troubleshoot complex issues."
+    //   ]
+    // },
+    // {
+    //   category: "Developer",
+    //   title: "Next.js Developer",
+    //   description: "Build high-performance web applications using Next.js & React.",
+    //   location: "Hyderabad, India",
+    //   experience: "0 Years",
+    //   type: "Full-time",
+    //   workMode: "Work From Office",
+    //   tags: ["Next.js 14", "TypeScript", "Tailwind", "Redux"],
+    //   about: "We are looking for a skilled Next.js Developer to join our core engineering team. You will be responsible for architecting and building scalable web applications, ensuring high performance and SEO optimization using the latest Next.js features (App Router, Server Actions).",
+    //   responsibilities: [
+    //     "Develop and maintain scalable web applications using Next.js (App Router) and TypeScript.",
+    //     "Implement Server-Side Rendering (SSR) and Static Site Generation (SSG) for optimal performance.",
+    //     "Collaborate with UI/UX designers to translate Figma designs into pixel-perfect, responsive code.",
+    //     "Optimize applications for maximum speed, SEO, and scalability.",
+    //     "Integrate RESTful APIs and third-party services (e.g., Stripe, Firebase, AWS)."
+    //   ],
+    //   requirements: [
+    //     "Strong proficiency in JavaScript (ES6+), TypeScript, and React.js.",
+    //     "In-depth knowledge of Next.js features (Routing, Image Optimization, Middleware).",
+    //     "Experience with state management libraries (Redux Toolkit, Zustand, or Context API).",
+    //     "Proficiency in Tailwind CSS and modern styling frameworks.",
+    //     "Understanding of SEO principles and Core Web Vitals.",
+    //     "Experience with version control (Git) and CI/CD pipelines."
+    //   ]
+    // },
    
   ];
 
