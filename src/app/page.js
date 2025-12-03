@@ -877,7 +877,7 @@ export default function Careers() {
              Don't See a Perfect Fit?
         </h3>
         <p className="mt-4 max-w-2xl mx-auto text-2xl font-bold">
-           We're always looking for talented people.<br/> Send us your resume to our mail id "<span className="text-violet-500  px-2 py-1 rounded font-bold">vyomanexgenservices@gmail.com</span>" <br/>. Let's talk
+           We're always looking for talented people.<br/> Send us your resume to our mail id "<span className="text-violet-500  px-2 py-1 rounded font-bold">vyomanexgenservices@gmail.com</span>". <br/>Let's talk
            about how you can contribute to our team.
         </p>
         <button
