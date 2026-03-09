@@ -30,7 +30,7 @@
 // export default function Careers() {
 //   const router = useRouter();
 //   const [tab, setTab] = useState("jobs");
-  
+
 //   // State for the modal
 //   const [selectedJob, setSelectedJob] = useState(null);
 
@@ -104,7 +104,7 @@
 //     //     "Experience with version control (Git) and CI/CD pipelines."
 //     //   ]
 //     // },
-   
+
 //   ];
 
 //   const interns = [
@@ -320,7 +320,7 @@
 
 //       {/* JOB LIST SECTION */}
 //       <section className="pt-6 pb-24 md:pb-32 px-4 md:px-6 max-w-5xl mx-auto space-y-8 md:space-y-10">
-        
+
 //         {isJobsTab && noJobs && (
 //           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} className="text-center py-20">
 //             <h3 className="text-2xl md:text-3xl font-bold text-gray-700">No Job Openings Right Now</h3>
@@ -346,7 +346,7 @@
 //               className="p-6 md:p-8 rounded-2xl backdrop-blur-xl bg-white/70 border border-white/40 shadow hover:shadow-xl transition"
 //             >
 //               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                
+
 //                 {/* Content Side */}
 //                 <div className="flex-1 w-full">
 //                   <div className="flex flex-wrap gap-2 mb-3">
@@ -431,7 +431,7 @@
 //               onClick={(e) => e.stopPropagation()}
 //               className="bg-white rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden"
 //             >
-              
+
 //               {/* Header */}
 //               <div className="flex-shrink-0 p-5 md:p-6 border-b border-gray-100 bg-gray-50 flex justify-between items-start">
 //                 <div>
@@ -467,7 +467,7 @@
 
 //               {/* Scrollable Body */}
 //               <div className="flex-1 p-5 md:p-8 overflow-y-auto space-y-6">
-                
+
 //                 {/* 1. About the Role */}
 //                 <div>
 //                   <h4 className="text-base md:text-lg font-bold text-gray-900 mb-2">About the Role</h4>
@@ -550,6 +550,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import Navbar from "./components/Navbar";
+import Loader from "./components/Loader";
 
 // Icons
 import {
@@ -576,10 +577,10 @@ import {
 
 export default function Careers() {
   const router = useRouter();
-  
+
   // 1. CHANGED: Default state is now "interns"
   const [tab, setTab] = useState("interns");
-  
+
   // State for the modal
   const [selectedJob, setSelectedJob] = useState(null);
 
@@ -604,7 +605,7 @@ export default function Careers() {
   ];
 
   const interns = [
-     {
+    {
       category: "Internship",
       title: "App Developer Intern",
       description: "Build mobile applications with modern frameworks.",
@@ -629,7 +630,7 @@ export default function Careers() {
         "A personal project or app (even simple ones) is a big plus."
       ]
     },
-    
+
     {
       category: "Internship",
       title: "Frontend Developer Intern",
@@ -680,7 +681,7 @@ export default function Careers() {
         "Good communication skills."
       ]
     },
-   
+
   ];
 
   const benefits = [
@@ -712,21 +713,24 @@ export default function Careers() {
 
   return (
     <div className="relative overflow-hidden bg-gradient-to-br from-purple-50 via-white to-blue-50">
+      {/* LOADER */}
+      <Loader />
+
       {/* NAVBAR */}
       <Navbar />
 
       {/* HERO */}
       <section className="relative text-center px-6 pt-32 pb-20 md:py-28 bg-gradient-to-r from-[#3b1566] via-[#6b1bb4] to-[#d11eac] text-white">
-        <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">Build the Future With Us</h1>
+        <h1 className="text-3xl md:text-5xl font-extrabold leading-tight">Your Career Starts Here</h1>
         <p className="mt-4 max-w-3xl mx-auto text-gray-200 text-base md:text-lg">
-          Join our growing team and work on exciting modern technology.
+          Join a passionate team building enterprise platforms, mobile apps, and digital products that make an impact.
         </p>
 
         <button
           onClick={() => router.push("#openings")}
           className="mt-8 px-8 py-3 bg-white text-[#6b1bb4] rounded-full font-semibold shadow hover:shadow-lg transition"
         >
-          View Open Positions
+          Explore Opportunities
         </button>
       </section>
 
@@ -776,7 +780,7 @@ export default function Careers() {
       <section id="openings" className="text-center pt-16 md:pt-24 pb-6 px-4">
         <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800">Open Positions</h2>
         <div className="relative mt-8 inline-flex items-center backdrop-blur-xl bg-white/25 border border-white/40 rounded-full shadow-lg p-1.5 md:p-2">
-          
+
           {/* 2. CHANGED: Swapped positions so Internships is first */}
           <button onClick={() => setTab("interns")} className="relative px-4 md:px-6 py-2 rounded-full font-medium text-sm md:text-base">
             {tab === "interns" && <ActiveTabIndicator />}
@@ -797,7 +801,7 @@ export default function Careers() {
 
       {/* JOB LIST SECTION */}
       <section className="pt-6 pb-24 md:pb-32 px-4 md:px-6 max-w-5xl mx-auto space-y-8 md:space-y-10">
-        
+
         {isJobsTab && noJobs && (
           <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} className="text-center py-20">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-700">No Job Openings Right Now</h3>
@@ -823,7 +827,7 @@ export default function Careers() {
               className="p-6 md:p-8 rounded-2xl backdrop-blur-xl bg-white/70 border border-white/40 shadow hover:shadow-xl transition"
             >
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-                
+
                 {/* Content Side */}
                 <div className="flex-1 w-full">
                   <div className="flex flex-wrap gap-2 mb-3">
@@ -872,17 +876,28 @@ export default function Careers() {
       </section>
 
       {/* FOOTER CTA */}
-      <section className="text-center px-6 py-16 md:py-24 bg-gradient-to-r from-[#3b1566] via-[#6b1bb4] to-[#d11eac] text-white">
-        <h3 className="text-xl font-semibold tracking-wide">
-             Don't See a Perfect Fit?
+      <section className="text-center px-4 sm:px-6 py-12 sm:py-16 md:py-24 bg-gradient-to-r from-[#3b1566] via-[#6b1bb4] to-[#d11eac] text-white">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold tracking-wide">
+          Don&apos;t See a Perfect Fit?
         </h3>
-        <p className="mt-4 max-w-2xl mx-auto text-2xl font-bold">
-           We're always looking for talented people.<br/> Send us your resume to our mail id "<span className="text-violet-500  px-2 py-1 rounded font-bold">vyomanexgenservices@gmail.com</span>". <br/>Let's talk
-           about how you can contribute to our team.
+        <p className="mt-3 sm:mt-4 max-w-2xl mx-auto text-base sm:text-lg md:text-2xl font-bold leading-relaxed">
+          We&apos;re always looking for talented people.
+        </p>
+        <p className="mt-2 sm:mt-3 max-w-xl mx-auto text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed">
+          Send us your resume at{" "}
+          <a
+            href="mailto:vyomanexgenservices@gmail.com"
+            className="inline-block text-cyan-300 font-semibold bg-white/10 px-2 py-0.5 rounded hover:bg-white/20 hover:text-white transition break-all sm:break-normal"
+          >
+            vyomanexgenservices@gmail.com
+          </a>
+        </p>
+        <p className="mt-2 max-w-xl mx-auto text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed">
+          Let&apos;s talk about how you can contribute to our team.
         </p>
         <button
           onClick={() => router.push("https://vyomanexgen.com/contact")}
-          className="mt-8 px-8 py-3 bg-white text-[#6b1bb4] rounded-full font-semibold shadow hover:shadow-lg transition"
+          className="mt-6 sm:mt-8 px-6 sm:px-8 py-3 bg-white text-[#6b1bb4] rounded-full font-semibold shadow hover:shadow-lg transition text-sm sm:text-base"
         >
           Get in Touch
         </button>
@@ -908,41 +923,40 @@ export default function Careers() {
               onClick={(e) => e.stopPropagation()}
               className="bg-white rounded-2xl w-full max-w-2xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden"
             >
-              
+
               {/* Header */}
               <div className="flex-shrink-0 p-5 md:p-6 border-b border-gray-100 bg-gray-50 flex justify-between items-start">
                 <div>
-                   <div className="flex flex-wrap gap-2 mb-2">
-                     <span className="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded-md uppercase tracking-wide">
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    <span className="text-xs font-bold text-blue-600 bg-blue-100 px-2 py-1 rounded-md uppercase tracking-wide">
                       {selectedJob.category}
-                     </span>
-                     
-                     {/* Work Mode Badge in Header */}
-                     <span className={`text-xs font-bold px-2 py-1 rounded-md uppercase tracking-wide flex items-center gap-1 ${
-                       selectedJob.workMode.includes("Remote") ? "text-green-600 bg-green-100" : "text-purple-600 bg-purple-100"
-                     }`}>
-                       {getWorkModeIcon(selectedJob.workMode)}
-                       {selectedJob.workMode}
-                     </span>
+                    </span>
 
-                     {/* 3. CHANGED: Unpaid Badge Logic */}
-                     {selectedJob.category === "Internship" && (
-                       <span className="text-xs font-bold text-red-600 bg-red-100 px-2 py-1 rounded-md uppercase tracking-wide flex items-center gap-1">
-                         <Banknote size={14} /> Unpaid
-                       </span>
-                     )}
-                   </div>
+                    {/* Work Mode Badge in Header */}
+                    <span className={`text-xs font-bold px-2 py-1 rounded-md uppercase tracking-wide flex items-center gap-1 ${selectedJob.workMode.includes("Remote") ? "text-green-600 bg-green-100" : "text-purple-600 bg-purple-100"
+                      }`}>
+                      {getWorkModeIcon(selectedJob.workMode)}
+                      {selectedJob.workMode}
+                    </span>
+
+                    {/* 3. CHANGED: Unpaid Badge Logic */}
+                    {selectedJob.category === "Internship" && (
+                      <span className="text-xs font-bold text-red-600 bg-red-100 px-2 py-1 rounded-md uppercase tracking-wide flex items-center gap-1">
+                        <Banknote size={14} /> Unpaid
+                      </span>
+                    )}
+                  </div>
 
                   <h3 className="text-xl md:text-2xl font-extrabold text-gray-900 leading-tight">
                     {selectedJob.title}
                   </h3>
                   <p className="text-gray-500 text-sm mt-1 flex flex-wrap gap-2 items-center">
-                    <MapPin size={14}/> {selectedJob.location} 
-                    <span className="text-gray-300">|</span> 
-                    <Briefcase size={14}/> {selectedJob.type}
+                    <MapPin size={14} /> {selectedJob.location}
+                    <span className="text-gray-300">|</span>
+                    <Briefcase size={14} /> {selectedJob.type}
                   </p>
                 </div>
-                <button 
+                <button
                   onClick={() => setSelectedJob(null)}
                   className="p-2 -mr-2 text-gray-400 hover:text-gray-600 hover:bg-gray-200 rounded-full transition"
                 >
@@ -952,7 +966,7 @@ export default function Careers() {
 
               {/* Scrollable Body */}
               <div className="flex-1 p-5 md:p-8 overflow-y-auto space-y-6">
-                
+
                 {/* 1. About the Role */}
                 <div>
                   <h4 className="text-base md:text-lg font-bold text-gray-900 mb-2">About the Role</h4>
@@ -974,29 +988,29 @@ export default function Careers() {
                   </ul>
                 </div>
 
-                 {/* 3. Requirements */}
-                 {selectedJob.requirements && (
-                 <div>
-                   <h4 className="text-base md:text-lg font-bold text-gray-900 mb-3">Requirements</h4>
-                   <ul className="space-y-3">
-                     {selectedJob.requirements.map((item, index) => (
-                       <li key={index} className="flex gap-3 text-gray-600 text-sm md:text-base leading-relaxed">
-                         <div className="h-1.5 w-1.5 rounded-full bg-gray-400 mt-2 shrink-0" />
-                         <span>{item}</span>
-                       </li>
-                     ))}
-                   </ul>
-                 </div>
-                 )}
+                {/* 3. Requirements */}
+                {selectedJob.requirements && (
+                  <div>
+                    <h4 className="text-base md:text-lg font-bold text-gray-900 mb-3">Requirements</h4>
+                    <ul className="space-y-3">
+                      {selectedJob.requirements.map((item, index) => (
+                        <li key={index} className="flex gap-3 text-gray-600 text-sm md:text-base leading-relaxed">
+                          <div className="h-1.5 w-1.5 rounded-full bg-gray-400 mt-2 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 {/* 4. Tech Stack */}
                 <div className="pt-4 border-t border-gray-100">
                   <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wide mb-3">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
                     {selectedJob.tags.map((tag, i) => (
-                       <span key={i} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full font-medium border border-gray-200">
-                         {tag}
-                       </span>
+                      <span key={i} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full font-medium border border-gray-200">
+                        {tag}
+                      </span>
                     ))}
                   </div>
                 </div>
